@@ -11,54 +11,60 @@
 </head>
 
     <h3 align="center">메뉴 정하기</h3>
-
+<form>
 <table border="1">
     <tr>
-        <th>메뉴</th> <th>가격</th> <th>수량</th>
+        <th>메뉴</th> <th>가격</th> <th>수량</th><th>합계</th>
     </tr>
     <tr>
-        <th>돈까스 도시락</th> <th>5500원</th><rh></rh>
+        <td>돈까스 도시락</td> <td>5500원</td> <td> <input id = 'Lunch1' type ='text' size ='2' value ='0' onclick = "this.select();"></td> <td> <input id = 'Lunch1Total' type = 'text' size = '6' value = '0'> 원 </td>
     </tr>
     <tr>
-        <th>함박 스테이크 도시락</th> <th>6500원</th><rh></rh>
+        <td>함박 스테이크 도시락</td> <td>6500원</td> <td> <input id = 'Lunch2' type ='text' size ='2' value ='0' onclick = "this.select();"> </td> <td> <input id = 'Lunch2Total' type = 'text' size = '6' value = '0'> 원 </td>
     </tr>
     <tr>
-        <th>불고기 도시락</th> <th>5000원</th><rh></rh>
+        <td>불고기 도시락</td> <td>5000원</td> <td> <input id = 'Lunch3' type ='text' size ='2' value ='0' onclick = "this.select();"> </td> <td> <input id = 'Lunch3Total' type = 'text' size = '6' value = '0'> 원 </td>
     </tr>
     <tr>
-        <th>전주 비빔밥</th> <th>5000원</th><rh></rh>
+        <td>전주 비빔밥</td> <td>5000원</td> <td> <input id = 'Lunch4' type ='text' size ='2' value ='0' onclick = "this.select();"></td> <td> <input id = 'Lunch4Total' type = 'text' size = '6' value = '0'> 원 </td>
     </tr>
-    <tbody id= "Addi"></tbody>
-</table>
+    <td> 합계 </td> <td> &nbsp; </td> <td><input id = 'totalNumber' type = 'text' size = '2' value = '0'> </td> <td><input id = 'totalPrice' type = 'text' size = '6' value = '0'> </td>
+</table> <br />
+<input type = 'button' value = "합계" onclick = "updateAll();">
+<input type = "reset" value = "초기화"/>
+</form>
 
     
-<hr>	
-
-<div align="center">
-
-	<input type="button"  onclick="Add()" id="insert" name="addbtn" value="추가하기" />
+<hr>
 
 </div>
 
     
 <script type= 'text/javascript'>
-function Add(){
-    var Table;
-    Table = document.all["Addi"].insertRow();
-    
-    //메뉴
-    var Table_ln = Table.insertCell();
-    Table_ln.innerHTML="<input type='text' id=add_ln name=add_ln size='10' value=''/>";
-    
-    //가격
-    var Table_pr = Table.insertCell();
-    Table_pr.innerHTML="<input type='text' id=add_pr name=add_pr size='10' value=''/>";
-    
-    //수량
-    var Table_qu = Table.insertCell();
-    Table_qu.innerHTML="<input type='text' id=add_qu name=add_qu size='10' value=''/>";
-    
-}
+
+ function updateAll() 
+ {
+
+    var n1 = document.getElementById('Lunch1').value; //수량
+    var n2 = document.getElementById('Lunch2').value;
+    var n3 = document.getElementById('Lunch3').value;
+    var n4 = document.getElementById('Lunch4').value;
+
+    var p1 = 5500 * n1;
+    var p2 = 6500 * n2;
+    var p3 = 5000 * n3;
+    var p4 = 5000 * n4;
+    document.getElementById('Lunch1Total').value = p1;
+    document.getElementById('Lunch2Total').value = p2;
+    document.getElementById('Lunch3Total').value = p3;
+    document.getElementById('Lunch4Total').value = p4;
+
+    var totalNumber = parseInt(n1) + parseInt(n2) + parseInt(n3) + parseInt(n4);
+    document.getElementById('totalNumber').value = totalNumber;
+    var toalPrice = p1 + p2 + p3 + p4;
+    document.getElementById('totalPrice').value = totalPrice;
+
+ }   
 </script>
 
 

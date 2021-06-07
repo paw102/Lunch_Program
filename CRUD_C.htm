@@ -12,7 +12,7 @@
 
     <h3 align="center">메뉴 정하기</h3>
 <form>
-<table border="1">
+<table border="1" align="center">
     <tr>
         <th>메뉴</th> <th>가격</th> <th>수량</th><th>합계</th>
     </tr>
@@ -28,7 +28,7 @@
     <tr>
         <td>전주 비빔밥</td> <td>5000원</td> <td> <input id = 'Lunch4' type ='text' size ='2' value ='0' onclick = "this.select();"></td> <td> <input id = 'Lunch4Total' type = 'text' size = '6' value = '0'> 원 </td>
     </tr>
-    <td> 합계 </td> <td> &nbsp; </td> <td><input id = 'totalNumber' type = 'text' size = '2' value = '0'> </td> <td><input id = 'totalPrice' type = 'text' size = '6' value = '0'> </td>
+    <td> 합계 </td> <td> &nbsp; </td> <td><input id = 'totalNumber' type = 'text' size = '2' value = '0'> </td> <td><input id = 'totalPrice' type = 'text' size = '6' value = '0'> 원 </td>
 </table> <br />
 <input type = 'button' value = "합계" onclick = "updateAll();">
 <input type = "reset" value = "초기화"/>
@@ -61,7 +61,7 @@
 
     var totalNumber = parseInt(n1) + parseInt(n2) + parseInt(n3) + parseInt(n4);
     document.getElementById('totalNumber').value = totalNumber;
-    var toalPrice = p1 + p2 + p3 + p4;
+    var toalPrice = parseInt(p1) + parseInt(p2) + parseInt(p3) + parseInt(p4);
     document.getElementById('totalPrice').value = totalPrice;
 
  }   

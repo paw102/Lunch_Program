@@ -5,6 +5,8 @@
 	<title></title>
 </head>
 <body>
+
+
 <div class="searchbox">
       <div class="header">
         <h1>도시락 검색</h1>
@@ -14,38 +16,58 @@
       <div class="container">
 
         <div class="item">
-          <span class="name">스팸 마요</span>
+          <span class="name">스팸 마요 (3500원)</span> <input type='button' value='도시락추가' id = 'spam' onclick='addRow()' />
         </div>
 
         <div class="item">
-          <span class="name">치킨 마요</span>
+          <span class="name">치킨 마요 (3500원)</span> <input type='button' value='도시락추가' id='chicken' onclick='addRow()' />
         </div>
 
         <div class="item">
-          <span class="name">소고기 덮밥</span>
+          <span class="name">소고기 덮밥 (4000원)</span> <input type='button' value='도시락추가' id='beef1' onclick='addRow()' />
         </div>
 
         <div class="item">
-          <span class="name">소고기 도시락</span>
+          <span class="name">소고기 도시락 (4500원)</span> <input type='button' value='도시락추가' id='beef2' onclick='addRow()' />
         </div>
 
         <div class="item">
-          <span class="name">함박 도시락</span>
+          <span class="name">함박 도시락 (5000원)</span> <input type='button' value='도시락추가' id='hamburge' onclick='addRow()' />
+        </div>
+
         </div>
 
         <div class="item">
-          <span class="name">불고기 도시락</span>
+          <span class="name">불고기 도시락 (5500원)</span> <input type='button' value='도시락추가' id='bulgogi' onclick='addRow()' />
+        </div>
+
         </div>
 
         <div class="item">
-          <span class="name">돈까스 도시락</span>
+          <span class="name">돈까스 도시락 (5500원)</span> <input type='button' value='도시락추가' id='pork' onclick='addRow()' />
+        </div>
+
         </div>
 
         <div class="item">
-          <span class="name">전주 비빔밥</span>
+          <span class="name">전주 비빔밥 (4000원)</span> <input type='button' value='도시락추가' id='bibimbap' onclick='addRow()' />
+        </div>
+
         </div>
       </div>
     </div>
+
+<form>
+<table border="1" id='table' align="center">
+    <tr>
+        <th>메뉴</th> <th>가격</th> <th>수량</th><th>합계</th>
+    </tr>
+    <th> 합계 </th> <th> &nbsp; </th> <th><input id = 'totalNumber' type = 'text' size = '2' value = '0'> </th> <th><input id = 'totalPrice' type = 'text' size = '6' value = '0'> 원 </th>
+</table> <br>
+</form>
+
+
+
 <script type="text/javascript">
 	function filter(){
 
@@ -63,6 +85,32 @@
           }
         }
       }
+
+ function addRow() {
+
+    if(confirm("도시락을 추가하시겠습니까?")){
+
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+
+    if (id = spam) {
+      newCell1.innerHTML = "스팸 마요";
+      newCell2.innerHTML = "3500원"
+    }
+    if (id = chicken) {
+      newCell1.innerHTML = "치킨 마요";
+      newCell2.innerHTML = "3500원"
+    }
+  }
+      newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+      newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+
+} else {
+  alert("천천히 골라주세요 :)");
+ }
 
 </script>
 </body>

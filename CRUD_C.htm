@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -12,26 +12,14 @@
 
     <h3 align="center">메뉴 정하기</h3>
 <form>
-<table border="1" align="center">
+<table border="1" id='table'>
     <tr>
         <th>메뉴</th> <th>가격</th> <th>수량</th><th>합계</th>
     </tr>
-    <tr>
-        <td>돈까스 도시락</td> <td>5500원</td> <td> <input id = 'Lunch1' type ='text' size ='2' value ='0' onclick = "this.select();"></td> <td> <input id = 'Lunch1Total' type = 'text' size = '6' value = '0'> 원 </td>
-    </tr>
-    <tr>
-        <td>함박 스테이크 도시락</td> <td>6500원</td> <td> <input id = 'Lunch2' type ='text' size ='2' value ='0' onclick = "this.select();"> </td> <td> <input id = 'Lunch2Total' type = 'text' size = '6' value = '0'> 원 </td>
-    </tr>
-    <tr>
-        <td>불고기 도시락</td> <td>5000원</td> <td> <input id = 'Lunch3' type ='text' size ='2' value ='0' onclick = "this.select();"> </td> <td> <input id = 'Lunch3Total' type = 'text' size = '6' value = '0'> 원 </td>
-    </tr>
-    <tr>
-        <td>전주 비빔밥</td> <td>5000원</td> <td> <input id = 'Lunch4' type ='text' size ='2' value ='0' onclick = "this.select();"></td> <td> <input id = 'Lunch4Total' type = 'text' size = '6' value = '0'> 원 </td>
-    </tr>
-    <td> 합계 </td> <td> &nbsp; </td> <td><input id = 'totalNumber' type = 'text' size = '2' value = '0'> </td> <td><input id = 'totalPrice' type = 'text' size = '6' value = '0'> 원 </td>
-</table> <br />
+    <th> 합계 </th> <th> &nbsp; </th> <th><input id = 'totalNumber' type = 'text' size = '2' value = '0'> </th> <th><input id = 'totalPrice' type = 'text' size = '6' value = '0'> 원 </th>
+</table> <br>
 <input type = 'button' value = "합계" onclick = "updateAll();">
-<input type = "reset" value = "초기화"/>
+<input type='button' value='도시락추가' onclick='addRow()' />
 </form>
 
     
@@ -42,29 +30,43 @@
     
 <script type= 'text/javascript'>
 
+ function DeleteRowFunction(o) 
+ {
+     var p=o.parentNode.parentNode;
+         p.parentNode.removeChild(p);
+ }
+
+
  function updateAll() 
  {
 
-    var n1 = document.getElementById('Lunch1').value; //수량
-    var n2 = document.getElementById('Lunch2').value;
-    var n3 = document.getElementById('Lunch3').value;
-    var n4 = document.getElementById('Lunch4').value;
+    var n = document.getElementById('Lunch').value;
+    var LunchPrice = document.getElementById('LunchPrice').value;
+    var p = LunchPrice * n;
+    
+    document.getElementById('LunchTotal').value = p;
 
-    var p1 = 5500 * n1;
-    var p2 = 6500 * n2;
-    var p3 = 5000 * n3;
-    var p4 = 5000 * n4;
-    document.getElementById('Lunch1Total').value = p1;
-    document.getElementById('Lunch2Total').value = p2;
-    document.getElementById('Lunch3Total').value = p3;
-    document.getElementById('Lunch4Total').value = p4;
+    var totalNumber = parseInt(totalNumber) + parseInt(n);
+    totalNumber = document.getElementById('totalNumber').value;
 
-    var totalNumber = parseInt(n1) + parseInt(n2) + parseInt(n3) + parseInt(n4);
-    document.getElementById('totalNumber').value = totalNumber;
-    var toalPrice = parseInt(p1) + parseInt(p2) + parseInt(p3) + parseInt(p4);
-    document.getElementById('totalPrice').value = totalPrice;
+ }  
 
- }   
+ function addRow() {
+
+    const table = document.getElementById('table');
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+    const newCell5 = newRow.insertCell(4);
+
+    newCell1.innerHTML = "<input type = 'text' list = 'Menu' >";
+    newCell2.innerHTML = "<input type = 'text' id = 'LunchPrice' size = '6' >원"
+    newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+    newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+    newCell5.innerHTML = "<button type = 'button' value = 'Delete Row' onclick= 'DeleteRowFunction(this)'>취소";
+ } 
 </script>
 
 

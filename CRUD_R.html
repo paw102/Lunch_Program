@@ -16,43 +16,42 @@
       <div class="container">
 
         <div class="item">
-          <span class="name">스팸 마요 (3500원)</span> <input type='button' value='도시락추가' id = 'spam' onclick='addRow()' />
+          <span class="name">스팸 마요 (3500원)</span> <input type='button' value='도시락추가' onclick='addRow1()' />
         </div>
 
         <div class="item">
-          <span class="name">치킨 마요 (3500원)</span> <input type='button' value='도시락추가' id='chicken' onclick='addRow()' />
+          <span class="name">치킨 마요 (3500원)</span> <input type='button' value='도시락추가' onclick='addRow2()' />
         </div>
 
         <div class="item">
-          <span class="name">소고기 덮밥 (4000원)</span> <input type='button' value='도시락추가' id='beef1' onclick='addRow()' />
+          <span class="name">소고기 덮밥 (4000원)</span> <input type='button' value='도시락추가' onclick='addRow3()' />
         </div>
 
         <div class="item">
-          <span class="name">소고기 도시락 (4500원)</span> <input type='button' value='도시락추가' id='beef2' onclick='addRow()' />
+          <span class="name">소고기 도시락 (4500원)</span> <input type='button' value='도시락추가' onclick='addRow4()' />
         </div>
 
         <div class="item">
-          <span class="name">함박 도시락 (5000원)</span> <input type='button' value='도시락추가' id='hamburge' onclick='addRow()' />
-        </div>
-
-        </div>
-
-        <div class="item">
-          <span class="name">불고기 도시락 (5500원)</span> <input type='button' value='도시락추가' id='bulgogi' onclick='addRow()' />
+          <span class="name">함박 도시락 (5000원)</span> <input type='button' value='도시락추가' onclick='addRow5()' />
         </div>
 
         </div>
 
         <div class="item">
-          <span class="name">돈까스 도시락 (5500원)</span> <input type='button' value='도시락추가' id='pork' onclick='addRow()' />
+          <span class="name">불고기 도시락 (5500원)</span> <input type='button' value='도시락추가' onclick='addRow6()' />
         </div>
 
         </div>
 
         <div class="item">
-          <span class="name">전주 비빔밥 (4000원)</span> <input type='button' value='도시락추가' id='bibimbap' onclick='addRow()' />
+          <span class="name">돈까스 도시락 (5500원)</span> <input type='button' value='도시락추가' onclick='addRow7()' />
         </div>
 
+        </div>
+
+        <div class="item">
+          <span class="name">전주 비빔밥 (4000원)</span> <input type='button' value='도시락추가' onclick='addRow8()' />
+        </div>
         </div>
       </div>
     </div>
@@ -66,10 +65,149 @@
 </table> <br>
 </form>
 
-
-
 <script type="text/javascript">
-	function filter(){
+
+  function addRow1() {
+    if(confirm("도시락을 추가하시겠습니까?")){
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = "스팸마요"
+        newCell2.innerHTML = "3500원"
+        newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+        newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+      }
+    else {
+      alert("천천히 골라주세요 :)");
+    }
+}
+  function addRow2() {
+    if(confirm("도시락을 추가하시겠습니까?")){
+
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = "치킨마요"
+        newCell2.innerHTML = "3500원"
+        newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+        newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+}
+    else {
+      alert("천천히 골라주세요 :)");
+    }
+  }
+
+  function addRow3() {
+    if(confirm("도시락을 추가하시겠습니까?")){
+
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = "소고기덮밥"
+        newCell2.innerHTML = "4000원"
+        newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+        newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+}
+    else {
+      alert("천천히 골라주세요 :)");
+    }
+  }
+  function addRow4() {
+    if(confirm("도시락을 추가하시겠습니까?")){
+
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = "소고기도시락"
+        newCell2.innerHTML = "4500원"
+        newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+        newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+}
+    else {
+      alert("천천히 골라주세요 :)");
+    }
+  }
+
+    function addRow5() {
+    if(confirm("도시락을 추가하시겠습니까?")){
+
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = "함박도시락"
+        newCell2.innerHTML = "5000원"
+        newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+        newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+}
+    else {
+      alert("천천히 골라주세요 :)");
+    }
+  }
+
+  function addRow6() {
+    if(confirm("도시락을 추가하시겠습니까?")){
+
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = "불고기도시락"
+        newCell2.innerHTML = "3500원"
+        newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+        newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+}
+    else {
+      alert("천천히 골라주세요 :)");
+    }
+  }
+
+  function addRow7() {
+    if(confirm("도시락을 추가하시겠습니까?")){
+
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = "돈까스도시락"
+        newCell2.innerHTML = "5500원"
+        newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+        newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+}
+    else {
+      alert("천천히 골라주세요 :)");
+    }
+  }
+
+  function addRow8() {
+    if(confirm("도시락을 추가하시겠습니까?")){
+
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+        newCell1.innerHTML = "전주비빔밥"
+        newCell2.innerHTML = "4000원"
+        newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+        newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+}
+    else {
+      alert("천천히 골라주세요 :)");
+    }
+  }
+  function filter(){
 
         var value, name, item, i;
 
@@ -85,33 +223,6 @@
           }
         }
       }
-
- function addRow() {
-
-    if(confirm("도시락을 추가하시겠습니까?")){
-
-    const newRow = table.insertRow(1);
-    const newCell1 = newRow.insertCell(0);
-    const newCell2 = newRow.insertCell(1);
-    const newCell3 = newRow.insertCell(2);
-    const newCell4 = newRow.insertCell(3);
-
-    if (id = spam) {
-      newCell1.innerHTML = "스팸 마요";
-      newCell2.innerHTML = "3500원"
-    }
-    if (id = chicken) {
-      newCell1.innerHTML = "치킨 마요";
-      newCell2.innerHTML = "3500원"
-    }
-  }
-      newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
-      newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
-
-} else {
-  alert("천천히 골라주세요 :)");
- }
-
 </script>
 </body>
 </html>

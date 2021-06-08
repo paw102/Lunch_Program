@@ -30,13 +30,6 @@
     
 <script type= 'text/javascript'>
 
- function DeleteRowFunction(o) 
- {
-     var p=o.parentNode.parentNode;
-         p.parentNode.removeChild(p);
- }
-
-
  function updateAll() 
  {
 
@@ -59,13 +52,11 @@
     const newCell2 = newRow.insertCell(1);
     const newCell3 = newRow.insertCell(2);
     const newCell4 = newRow.insertCell(3);
-    const newCell5 = newRow.insertCell(4);
 
     newCell1.innerHTML = "<input type = 'text' list = 'Menu' >";
     newCell2.innerHTML = "<input type = 'text' id = 'LunchPrice' size = '6' >원"
     newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
     newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
-    newCell5.innerHTML = "<button type = 'button' value = 'Delete Row' onclick= 'DeleteRowFunction(this)'>취소";
  } 
 </script>
 

@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -11,54 +11,53 @@
 </head>
 
     <h3 align="center">메뉴 정하기</h3>
-
-<table border="1">
+<form>
+<table border="1" id='table'>
     <tr>
-        <th>메뉴</th> <th>가격</th> <th>수량</th>
+        <th>메뉴</th> <th>가격</th> <th>수량</th><th>합계</th>
     </tr>
-    <tr>
-        <th>돈까스 도시락</th> <th>5500원</th><rh></rh>
-    </tr>
-    <tr>
-        <th>함박 스테이크 도시락</th> <th>6500원</th><rh></rh>
-    </tr>
-    <tr>
-        <th>불고기 도시락</th> <th>5000원</th><rh></rh>
-    </tr>
-    <tr>
-        <th>전주 비빔밥</th> <th>5000원</th><rh></rh>
-    </tr>
-    <tbody id= "Addi"></tbody>
-</table>
+    <th> 합계 </th> <th> &nbsp; </th> <th><input id = 'totalNumber' type = 'text' size = '2' value = '0'> </th> <th><input id = 'totalPrice' type = 'text' size = '6' value = '0'> 원 </th>
+</table> <br>
+<input type = 'button' value = "합계" onclick = "updateAll();">
+<input type='button' value='도시락추가' onclick='addRow()' />
+</form>
 
     
-<hr>	
-
-<div align="center">
-
-	<input type="button"  onclick="Add()" id="insert" name="addbtn" value="추가하기" />
+<hr>
 
 </div>
 
     
 <script type= 'text/javascript'>
-function Add(){
-    var Table;
-    Table = document.all["Addi"].insertRow();
+
+ function updateAll() 
+ {
+
+    var n = document.getElementById('Lunch').value;
+    var LunchPrice = document.getElementById('LunchPrice').value;
+    var p = LunchPrice * n;
     
-    //메뉴
-    var Table_ln = Table.insertCell();
-    Table_ln.innerHTML="<input type='text' id=add_ln name=add_ln size='10' value=''/>";
-    
-    //가격
-    var Table_pr = Table.insertCell();
-    Table_pr.innerHTML="<input type='text' id=add_pr name=add_pr size='10' value=''/>";
-    
-    //수량
-    var Table_qu = Table.insertCell();
-    Table_qu.innerHTML="<input type='text' id=add_qu name=add_qu size='10' value=''/>";
-    
-}
+    document.getElementById('LunchTotal').value = p;
+
+    var totalNumber = parseInt(totalNumber) + parseInt(n);
+    totalNumber = document.getElementById('totalNumber').value;
+
+ }  
+
+ function addRow() {
+
+    const table = document.getElementById('table');
+    const newRow = table.insertRow(1);
+    const newCell1 = newRow.insertCell(0);
+    const newCell2 = newRow.insertCell(1);
+    const newCell3 = newRow.insertCell(2);
+    const newCell4 = newRow.insertCell(3);
+
+    newCell1.innerHTML = "<input type = 'text' list = 'Menu' >";
+    newCell2.innerHTML = "<input type = 'text' id = 'LunchPrice' size = '6' >원"
+    newCell3.innerHTML = "<input type = 'text' id = 'Lunch' size ='2' >"
+    newCell4.innerHTML = "<input type = 'text' id = 'LunchTotal' size = '6'>원"
+ } 
 </script>
 
 

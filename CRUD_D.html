@@ -14,7 +14,7 @@
 <form>
 <table border="1" id ="Table">
     <tr>
-        <th>메뉴</th> <th>가격</th> <th>수량</th><th>합계</th><th>삭제</th>
+        <th>메뉴</th> <th>가격</th> <th>수량</th><th>합계</th><th>제거</th>
     </tr>
 <tbody>   
     <tr>
@@ -50,8 +50,6 @@ function DeleteRowFunction(o) {
      var p=o.parentNode.parentNode;
          p.parentNode.removeChild(p);
     }
-
-
 
  function updateAll() 
  {

@@ -56,6 +56,7 @@ function updateAll()
     document.getElementById('totalNumber').value = totalNumber;
     var toalPrice = parseInt(p1) + parseInt(p2) + parseInt(p3) + parseInt(p4);
     document.getElementById('totalPrice').value = totalPrice;
+     
 
  }   
     
@@ -73,6 +74,10 @@ function modify()
        
        document.getElementById('d1').innerHTML="<input type='text' size='12' id='d_1'>"
        document.getElementById('d2').innerHTML="<input type='text' size='12' id='d_2'>"
+   }
+   else{
+       alert("수정하실 때 다시 눌러주세요!");
+       
    }
  
 }
